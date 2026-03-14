@@ -12,8 +12,6 @@ Script ini mengintegrasikan beberapa tools keamanan untuk melakukan proses berik
 4. **Logging** proses eksekusi dengan timestamp
 5. **Error Handling** dengan memisahkan error log
 
-Hasil akhir dari proses ini adalah daftar **subdomain uniq** dan **host yang aktif (live hosts)** yang siap digunakan untuk analisis keamanan lebih lanjut.
-
 ---
 
 # Tools yang Digunakan
@@ -44,6 +42,14 @@ go version
 ---
 
 ## 2. Install Recon Tools
+### Install PDTools Manager (pdtm)
+
+PDTools Manager (pdtm) adalah tool dari ProjectDiscovery yang digunakan untuk mengelola dan menginstall berbagai tools security seperti subfinder, httpx, nuclei, dan lainnya dengan lebih mudah.
+
+Install pdtm dengan perintah berikut:
+
+```bash
+go install github.com/projectdiscovery/pdtm/cmd/pdtm@latest
 
 ### Install subfinder
 
@@ -131,10 +137,10 @@ Script akan otomatis:
 File: `input/domains.txt`
 
 hackerone.com
+dibimbing.id
 kodenstore.com
-iana.org
-neverssl.com
-testphp.vulnweb.com
+tesla.com
+uber.com
 
 ---
 
@@ -142,14 +148,23 @@ testphp.vulnweb.com
 
 File: `output/all-subdomains.txt`
 
-[www.iana.org](http://www.iana.org)
-data.iana.org
-rdns.int.iana.org
-rzm.iana.org
+a.ns.hackerone.com
+b.ns.hackerone.com
+go.hackerone.com
+design.hackerone.com
+api.hackerone.com
+docs.hackerone.com
+mta-sts.forwarding.hackerone.com
+mta-sts.hackerone.com
 
 File: `output/live.txt`
 
-https://www.iana.org [200] [Internet Assigned Numbers Authority]
+[https://www.iana.org [200] [Internet Assigned Numbers Authority]](https://15205598.uber.com [404] [404 Not Found]
+https://4460893.sodigital.uber.com [404] [404 Not Found]
+https://a.uber.com [301] [301 Moved Permanently]
+http://a.ns.hackerone.com [301] [301 Moved Permanently]
+https://account.uber.com [302] [302 Found]
+)
 
 ---
 
@@ -163,25 +178,22 @@ Berisi aktivitas script selama berjalan.
 
 Contoh:
 
-Recon started at Thu Mar 12
-
-Starting enumeration for hackerone.com
-Starting enumeration for iana.org
-
-Checking which hosts are alive
-
-Recon finished at Thu Mar 12
+Recon started at Sat Mar 14 03:21:36 AM WITA 2026
+[+] Starting enumeration for hackerone.com
+[+] Starting enumeration for dibimbing.id
+[+] Starting enumeration for kodenstore.com
+[+] Starting enumeration for tesla.com
+[+] Starting enumeration for uber.com
+[+] Checking which hosts are alive...
+[+] Total unique subdomains found : 11043
+[+] Total live hosts detected     : 101
+Recon finished at Sat Mar 14 04:05:48 AM WITA 2026
 
 ---
 
 ## errors.log
 
 Berisi error yang terjadi selama proses recon.
-
-Contoh:
-
-timeout error
-connection refused
 
 ---
 
@@ -226,10 +238,6 @@ subfinder -d domain.com
 ## 3. Deduplication
 
 Tool **anew** digunakan untuk memastikan tidak ada subdomain yang tersimpan dua kali.
-
-Contoh penggunaan:
-
-anew output/all-subdomains.txt
 
 ---
 
