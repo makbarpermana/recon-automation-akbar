@@ -285,24 +285,3 @@ Total live hosts detected : 1
 Recon finished at Thu Mar 12 22:55:35
 
 ---
-
-# Screenshot
-
-Tambahkan screenshot berikut pada README:
-
-1. Screenshot saat menjalankan script di terminal
-2. Screenshot hasil file `live.txt`
-
-Contoh:
-
-![Recon Execution](images/recon-run.png)
-
-![Live Hosts Result](images/live-hosts.png)
-
----
-
-# Kesimpulan
-
-Script ini berhasil mengotomatisasi proses reconnaissance dengan mengintegrasikan beberapa tools keamanan dalam satu pipeline Bash scripting.
-
-Dengan adanya automation ini, proses pengumpulan subdomain dan identifikasi host aktif dapat dilakukan secara lebih cepat, efisien, dan terstruktur.
