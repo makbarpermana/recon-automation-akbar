@@ -48,7 +48,6 @@ PDTools Manager (pdtm) adalah tool dari ProjectDiscovery yang digunakan untuk me
 
 Install pdtm dengan perintah berikut:
 
-`bash
 go install github.com/projectdiscovery/pdtm/cmd/pdtm@latest
 
 ### Install subfinder
