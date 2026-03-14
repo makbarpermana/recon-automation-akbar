@@ -288,7 +288,7 @@ Recon finished at Thu Mar 12 22:55:35
 
 ## Screenshot Eksekusi Script
 
-![Recon Execution](recon-automation-akbar/screenshots/recon-run.png)
+![recon-automation-akbar/screenshots/recon-run.png](https://github.com/makbarpermana/recon-automation-akbar/blob/30ea5a1738f468356612a491756ab508879a7096/recon-automation-akbar/screenshots/live-result.png)
 
 ## Hasil Live Hosts
 
