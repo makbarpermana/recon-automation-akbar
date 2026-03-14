@@ -285,3 +285,11 @@ Total live hosts detected : 1
 Recon finished at Thu Mar 12 22:55:35
 
 ---
+
+## Screenshot Eksekusi Script
+
+![Recon Execution](screenshots/recon-run.png)
+
+## Hasil Live Hosts
+
+![Live Hosts Result](screenshots/live-result.png)
