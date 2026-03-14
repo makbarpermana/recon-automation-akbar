@@ -47,8 +47,7 @@ go version
 PDTools Manager (pdtm) adalah tool dari ProjectDiscovery yang digunakan untuk mengelola dan menginstall berbagai tools security seperti subfinder, httpx, nuclei, dan lainnya dengan lebih mudah.
 
 Install pdtm dengan perintah berikut:
-
-```bash
+`bash
 go install github.com/projectdiscovery/pdtm/cmd/pdtm@latest
 
 ### Install subfinder
